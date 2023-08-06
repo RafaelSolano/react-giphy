@@ -14,7 +14,11 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': [
       'warn',
-      { allowConstantExport: true },
+      {
+        allowConstantExport: true,
+      },
     ],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"]
   },
 }
