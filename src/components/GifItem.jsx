@@ -16,5 +16,3 @@ GifItem.propTypes = {
   url: PropTypes.string.isRequired,
   id: PropTypes.any.isRequired,
 };
-
-export default GifItem;
