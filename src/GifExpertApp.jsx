@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import AddCategory from './components/AddCategory';
-import GifGrid from './components/GifGrid';
+import {AddCategory, GifGrid} from './components';
 
 function GifExpertApp() {
   //hooks para mantener el stado// siempre inicilaizarlo
@@ -15,9 +14,8 @@ function GifExpertApp() {
 
   return (
     <>
-      {/* titulo  */}
       <h1>GifExpertApp</h1>
-      <AddCategory onNewCategory={(event) => onAddCategory(event)} />
+      <AddCategory onNewCategory={(value) => onAddCategory(value)} />
       {categories.map((category) => (
         <GifGrid
           key={category}

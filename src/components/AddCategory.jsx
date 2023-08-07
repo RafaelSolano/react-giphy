@@ -1,22 +1,21 @@
 import PropTypes from 'prop-types';
-
 import { useState } from 'react';
 
-function AddCategory({ onNewCategory }) {
+export function AddCategory({ onNewCategory }) {
   //Manejar el estado de este input
 
   const [inputvalue, setInputvalue] = useState('');
 
-  const onInputChanged = (event) => {
-    setInputvalue(event.target.value);
+  const onInputChanged = ({target}) => {
+    setInputvalue(target.value);
   };
   const onSubmint = (event) => {
     event.preventDefault();
 
     if (inputvalue.trim().length <= 1) return; // evitar insertar datos vacio o de 1 caracter
 
-    onNewCategory(inputvalue.trim());
     setInputvalue(''); //limpia el input despues de agragar un elemento
+    onNewCategory(inputvalue.trim());
   };
 
   return (
