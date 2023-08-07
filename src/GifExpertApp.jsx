@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import AddCategory from './components/AddCategory';
+import GifGrid from './components/GifGrid';
 
 function GifExpertApp() {
-
   //hooks para mantener el stado// siempre inicilaizarlo
   const [categories, setCategories] = useState(['One Punch', 'Goku']);
   console.log(categories);
@@ -17,24 +17,12 @@ function GifExpertApp() {
     <>
       {/* titulo  */}
       <h1>GifExpertApp</h1>
-
-      <AddCategory
-        onNewCategory={(event) => onAddCategory(event)}
-      
-      // setCategories={ setCategories}
-      />
-
-      {/* input */}
-
-  
-      <ol>
-        {categories.map(category => {
-          return <li key={category}>{category} </li>;
-        })}
-        
-
-        
-      </ol>
+      <AddCategory onNewCategory={(event) => onAddCategory(event)} />
+      {categories.map((category) => (
+        <GifGrid
+          key={category}
+          category={category} />
+      ))}
     </>
   );
 }
